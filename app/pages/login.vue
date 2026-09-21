@@ -1,6 +1,6 @@
 <template>
-    <v-container class="fill-height d-flex align-center justify-center">
-      <v-card width="400" class="pa-6 rounded-xl">
+    <v-container class="d-flex flex-column justify-center align-center" style="min-height: 100vh;">
+      <v-card width="400" class="pa-6 rounded-xl" >
         <v-card-title class="text-center text-h5">Login</v-card-title>
     <v-card-text>
       <v-btn
@@ -19,6 +19,11 @@
 
 
 <script setup lang="ts">
+
+  definePageMeta({
+    layout: false
+  })
+  
       // @ts-nocheck
     const config = useRuntimeConfig()
       declare global {

@@ -1,6 +1,6 @@
 <template>
-      <v-container>
-        <v-card v-if="user" class="pa-6">
+      <v-container class="d-flex flex-column justify-center align-center" style="min-height: 100vh;">
+        <v-card v-if="user" width="400" class="pa-6 rounded-xl">
       <div class="d-flex align-center ga-4">
       <v-avatar size="64">
         <v-img :src="user.picture" />
@@ -13,6 +13,7 @@
 
       </div>
       </div>
+
           </v-card>
             </v-container>
 </template>
@@ -20,6 +21,7 @@
 
     <script setup lang="ts">
       const user = ref<any>(null)
+
         onMounted(() => {
       const savedUser = localStorage.getItem('google_user')
         if (savedUser) {
@@ -32,5 +34,7 @@
         localStorage.removeItem('google_token')
         navigateTo('/login')
 }
+
+ 
 
 </script>
