@@ -15,9 +15,9 @@
         <v-divider></v-divider>
 
         <v-list density="compact" nav>
-          <v-list-item prepend-icon="mdi-folder" title="My Files" value="myfiles"></v-list-item>
+          <v-list-item prepend-icon="mdi-folder" title="My Files" value="myfiles" to="/login"></v-list-item>
           <v-list-item prepend-icon="mdi mdi-qrcode" title="QR Scanner" value="shared" to="/qr-scanner"></v-list-item>
-          <v-list-item prepend-icon="mdi mdi-weather-cloudy" title="Weather App" value="starred"></v-list-item>
+          <v-list-item prepend-icon="mdi mdi-weather-cloudy" title="Weather App" value="starred" to="weather"></v-list-item>
         </v-list>
       </v-navigation-drawer>
 

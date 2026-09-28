@@ -3,11 +3,11 @@
 
     <v-card>
       <v-card-text>
-        <video class="qr-video"></video>
+        <video ref="videoRef" class="qr-video"></video>
 
-        <v-btn color="primary" class="mx-5" >Start Scanner</v-btn>
+        <v-btn block color="primary" @click="startScanner">Start Scanner</v-btn>
           
-        <v-btn color="error">Stop Scanner</v-btn>
+        <v-btn block class="mt-2" color="error">Stop Scanner</v-btn>
 
 
       </v-card-text>
@@ -17,7 +17,34 @@
 </template>
 
 <script lang="ts" setup>
-  
+    //@ts-nocheck
+    import QrScanner from 'qr-scanner';
+
+    const videoRef = ref<HTMLVideoElement | null>(null)
+    //const result = ref('')
+    let scanner: QrScanner | null = null
+
+    const startScanner = async () => {
+      if (!videoRef.value) return
+
+      scanner = new QrScanner(
+        videoRef.value,
+      (scanResult) => {
+        //result.value =scanResult.data
+       // defineEmits('scanned' , scanResult.data)
+
+        scanner?.stop()
+      },
+      {
+        preferredCamera: 'environment',
+        highlightScanRegion: true,
+        highlightCodeOutline: true,
+      }
+    )
+
+    await scanner.start()
+    }
+    
 </script>
 
 <style scoped>
@@ -25,6 +52,6 @@
     width: 100%;
     max-width: 400%;
     border-radius: 12px;
-    background: rgb(37, 37, 37);
+    background: rgb(0, 0, 0);
     }
 </style>  
