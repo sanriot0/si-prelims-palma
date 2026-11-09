@@ -19,7 +19,7 @@
       block 
       color="green"
       size="large"
-      @click="">
+    >
         Sign in 
       </v-btn>
        <v-divider opacity=".7" thickness="3" gradient vertical>OR</v-divider>
@@ -39,6 +39,7 @@
 
 
 <script setup lang="ts">
+  //@ts-nocheck
 
   definePageMeta({
     layout: false
@@ -81,3 +82,15 @@
 
   
 </script>
+
+function definePageMeta(arg0: { layout: boolean }) {
+  throw new Error("Function not implemented.")
+}
+
+function useRuntimeConfig() {
+  throw new Error("Function not implemented.")
+}
+
+function useRuntimeConfig() {
+  throw new Error("Function not implemented.")
+}
